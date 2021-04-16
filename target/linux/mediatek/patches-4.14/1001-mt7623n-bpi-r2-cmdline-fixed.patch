@@ -1,0 +1,11 @@
+diff -urN linux-4.14.98.org/arch/arm/boot/dts/mt7623n-bananapi-bpi-r2.dts linux-4.14.98/arch/arm/boot/dts/mt7623n-bananapi-bpi-r2.dts
+--- linux-4.14.98.org/arch/arm/boot/dts/mt7623n-bananapi-bpi-r2.dts	2020-02-29 12:52:19.579514193 +0800
++++ linux-4.14.98/arch/arm/boot/dts/mt7623n-bananapi-bpi-r2.dts	2020-02-29 12:53:44.525404385 +0800
+@@ -19,6 +19,7 @@
+ 
+ 	chosen {
+ 		stdout-path = "serial2:115200n8";
++		bootargs = "earlyprintk block2mtd.block2mtd=/dev/mmcblk0,65536,eMMC,5 mtdparts=eMMC:512k(mbr)ro,512k(uboot)ro,512k(config)ro,512k(factory)ro,32M(kernel),32M(recovery),1024M(rootfs),2048M(usrdata),-(bmtpool) rootfstype=squashfs,jffs2 ";
+ 	};
+ 
+ 	memory {

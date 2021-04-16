@@ -1,0 +1,184 @@
+Source-Makefile: feeds/freifunk/applications/luci-app-freifunk-diagnostics/Makefile
+
+Source-Makefile: feeds/freifunk/applications/luci-app-freifunk-policyrouting/Makefile
+
+Source-Makefile: feeds/freifunk/applications/luci-app-freifunk-widgets/Makefile
+
+Source-Makefile: feeds/freifunk/applications/luci-app-meshwizard/Makefile
+
+Source-Makefile: feeds/freifunk/contrib/package/community-profiles/Makefile
+
+Package: community-profiles
+Submenu: 9. Freifunk
+Version: 3
+Depends: +libc +GCC_LIBSSP:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread freifunk-common
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: Community profiles
+Maintainer: 
+Source: 
+Type: ipkg
+Description:   These community profiles set defaults for various free network/freifunk communities and are used by wizards like ffwizard and meshwizard.
+
+@@
+
+
+Source-Makefile: feeds/freifunk/contrib/package/freifunk-common/Makefile
+
+Package: freifunk-common
+Submenu: 9. Freifunk
+Version: 5
+Depends: +libc +GCC_LIBSSP:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread +libuci-lua +olsrd
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: Freifunk common files
+Maintainer: 
+Source: 
+Type: ipkg
+Description:   Common files and scripts that are needed to run free wireless mesh networks.
+
+@@
+
+
+Source-Makefile: feeds/freifunk/contrib/package/freifunk-firewall/Makefile
+
+Package: freifunk-firewall
+Submenu: 9. Freifunk
+Version: 3
+Depends: +libc +GCC_LIBSSP:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread +firewall
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: Freifunk Firewall Addon
+Maintainer: 
+Source: 
+Type: ipkg
+Description:   Various firewall extensions for Freifunk. Includes NAT fixes and advanced settings.
+
+@@
+
+
+Source-Makefile: feeds/freifunk/contrib/package/freifunk-gwcheck/Makefile
+
+Package: freifunk-gwcheck
+Submenu: 9. Freifunk
+Version: 4
+Depends: +libc +GCC_LIBSSP:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread firewall +ip +iptables-mod-ipopt +olsrd-mod-dyn-gw-plain
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: Freifunk gateway check script
+Maintainer: 
+Source: 
+Type: ipkg
+Description:   This script periodically checks if internet is available via your own gateway. If it detects that it is broken, then the defaultroute is removed from the main table and temporarilly placed in table gw-check until your internet works again. Config file is /etc/config/freifunk-gwcheck.
+
+@@
+
+
+Source-Makefile: feeds/freifunk/contrib/package/freifunk-mapupdate/Makefile
+
+Package: freifunk-mapupdate
+Submenu: 9. Freifunk
+Version: 1
+Depends: +libc +GCC_LIBSSP:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread +olsrd-mod-nameservice
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: Update script for freifunkmap
+Maintainer: 
+Source: 
+Type: ipkg
+Description:   This script updates the freifunkmap (also known as the global map, see http://map.berlin.freifunk.net) every hour. Config file is /etc/config/freifunk-mapupdate.
+
+@@
+
+
+Source-Makefile: feeds/freifunk/contrib/package/freifunk-policyrouting/Makefile
+
+Package: freifunk-policyrouting
+Submenu: 9. Freifunk
+Version: 6
+Depends: +libc +GCC_LIBSSP:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread +ip
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: Freifunk policy routing addon
+Maintainer: 
+Source: 
+Type: ipkg
+Description:   Allows you to send your own traffic via your own default gateway while sending traffic received from the mesh to a gateway in the mesh.
+
+@@
+
+
+Source-Makefile: feeds/freifunk/contrib/package/freifunk-watchdog/Makefile
+Build-Depends: uci
+
+Package: freifunk-watchdog
+Submenu: 9. Freifunk
+Version: 8
+Depends: +libc +GCC_LIBSSP:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread libuci
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: Freifunk Ad-Hoc watchdog daemon
+Maintainer: 
+Source: 
+Type: ipkg
+Description:   A watchdog daemon that monitors wireless interfaces to ensure the correct bssid and channel.
+  The process will initiate a wireless restart as soon as it detects a bssid or channel mismatch.
+
+@@
+
+
+Source-Makefile: feeds/freifunk/contrib/package/meshwizard/Makefile
+
+Package: meshwizard
+Submenu: 9. Freifunk
+Version: 0.3.3
+Depends: +libc +GCC_LIBSSP:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread +firewall
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: Shell script based wizard for Mesh networks
+Maintainer: 
+Source: 
+Type: ipkg
+Description:   A shellscript based wizard to simplify the setup of a typical mesh node (e.g. for Freifunk.net)
+
+@@
+
+
+Source-Makefile: feeds/freifunk/modules/luci-mod-freifunk/Makefile
+
+Source-Makefile: feeds/freifunk/modules/luci-mod-freifunk-community/Makefile
+
+Source-Makefile: feeds/freifunk/themes/luci-theme-freifunk-generic/Makefile
+
